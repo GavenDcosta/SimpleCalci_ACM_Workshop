@@ -13,9 +13,9 @@ Download the below zip file
 
 # Step 2
 
-Now Extract this file
-You will have a calculator folder in this 
-Open that in vs code
+Now Extract this file.
+You will have a calculator folder in this.
+Open that in vs code.
 
 ![image](https://github.com/user-attachments/assets/4a0bc99b-3805-489e-b5a3-5a5ed2341dbc)
 
