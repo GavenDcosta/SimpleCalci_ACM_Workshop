@@ -83,8 +83,6 @@ Implementing the Delete, Reset and Result functions
 ```
 function handleDelete() {
   displayExpression.innerHTML = displayExpression.innerHTML.trim().slice(0, -1);
-  if (displayExpression.innerHTML === '') {
-  }
 }
 
 function handleReset() {
