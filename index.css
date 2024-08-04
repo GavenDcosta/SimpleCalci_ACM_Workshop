@@ -1,0 +1,288 @@
+:root {
+    /****** theme 1 *******/
+    --mainbg: hsl(0, 0%, 0%); /* Black background */
+    --keypadbg: rgba(10, 17, 215, 0.25); /* Semi-transparent blue */
+    --screenbg: rgba(10, 17, 215, 0.25); /* Semi-transparent blue */
+
+    /* keys color */
+    --keybg1: hsla(0, 0%, 100%, 0.2); /* Transparent white */
+    --keyshadow1: hsla(0, 0%, 100%, 0.3); /* Slightly more opaque */
+    --keybg2: hsla(0, 0%, 100%, 0.2); /* Transparent white */
+    --keyshadow2: hsla(0, 0%, 100%, 0.3); /* Slightly more opaque */
+    --keybg3: hsla(0, 0%, 100%, 0.2); /* Transparent white */
+    --keyshadow3: hsla(0, 0%, 100%, 0.3); /* Slightly more opaque */
+
+    /* keys hover */
+    --keybg1hover: hsla(0, 0%, 100%, 0.3); /* More opaque for hover */
+    --keybg2hover: hsla(0, 0%, 100%, 0.3); /* More opaque for hover */
+    --keybg3hover: hsla(0, 0%, 100%, 0.3); /* More opaque for hover */
+
+    /* text colors */
+    --text1: hsl(52, 100%, 62%); /* Bright yellow for contrast */
+    --text2: hsl(0, 0%, 100%);   /* White */
+    --text3: hsl(52, 100%, 62%); /* Bright yellow for contrast */
+    --text4: hsl(0, 0%, 100%);   /* White */
+
+    /* font size */
+    --fontsize: 32px;
+}
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'League Spartan';
+    font-weight: 700;
+}
+
+
+body{
+    background-color: var(--mainbg);
+    background: url(./dark-theme-background.jpg);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.4rem;
+}
+
+/****** all buttons ****/
+button{
+    outline: none;
+}
+button:hover{
+    cursor: pointer;
+}
+
+
+/*************display section ****/
+
+#displaysection{
+    background: rgba(10, 17, 215, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(7, 21, 211, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px;
+    color: var(--text3);
+    text-align: right;
+    padding: 0.5rem 1rem;
+    font-size: var(--fontsize);
+    height: 70px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#displayexpression{
+    transform: translateY(0px);
+    transition: transform 0.2s;
+}
+
+#displayexpression.animate{
+    transform: translateY(20px);
+}
+
+/***** Keypad section *****/
+
+#keypad{
+    background: rgba(10, 17, 215, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(7, 21, 211, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 0.7rem;
+    column-gap: 0.25rem;
+    justify-content: space-around;
+    padding: 1.2rem;
+    border-radius: 12px;
+}
+
+#keypad button{
+    border-radius: 7px;
+    height: 100%;
+    padding: 0.7rem 0;
+    
+}
+
+.numbers, .operator{
+    background-color: var(--keybg3);
+    color: var(--text1);
+    font-size: var(--fontsize);
+    box-shadow: 0px 2px 0px var(--keyshadow3);
+    border-color: var(--keybg3);
+    width: 90%;
+}
+
+.numbers:hover, .operator:hover{
+    background-color: var(--keybg3hover);
+    border-color: var(--keybg3hover);
+}
+
+#del{
+    background-color: var(--keybg1);
+    color: var(--text2);
+    border-radius: 7px;
+    box-shadow: 0px 2px 0px var(--keyshadow1);
+    width: 90%;
+    border-color: var(--keybg1);
+}
+
+#del:hover{
+    background-color: var(--keybg1hover);
+    border-color: var(--keybg1hover);
+}
+
+#reset{
+    grid-column-start: 1 ;
+    grid-column-end: 3;
+    background-color: var(--keybg1);
+    color: var(--text2);
+    width: 96%;
+    box-shadow: 0px 2px 0px var(--keyshadow1);
+    border-color: var(--keybg1);
+}
+
+#reset:hover{
+    background-color: var(--keybg1hover);
+    border-color: var(--keybg1hover);
+}
+
+#result{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    font-size: var(--fontsize);
+    background-color: var(--keybg2);
+    color: var(--text4);
+    width: 96%;
+    box-shadow: 0px 2px 0px var(--keyshadow2);
+    border-color: var(--keybg2);
+}
+
+#result:hover{
+    background-color: var(--keybg2hover);
+    border-color: var(--keybg2hover);
+}
+
+/*320,375,425, 768, 1024, 1440, 2560*/
+
+@media only screen and (min-width: 425px) {
+    body{
+        gap: 1.2rem;
+        padding : 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section{
+        width:90%;
+    }
+    
+}
+
+@media only screen and (min-width:600px) {
+    body{
+        gap: 1.5rem;
+        padding : 2rem 5rem;
+    }
+
+    section{
+        width:77%;
+    }
+
+    #displaysection{
+        height: 75px;
+    }
+    
+}
+
+@media only screen and (min-width:768px) {
+    body{
+        gap: 1.5rem;
+        padding : 2rem 8rem;
+    }
+
+    section{
+        width:74%;
+    }
+    
+}
+
+@media only screen and (min-width:992px) {
+    body{
+        gap: 2rem;
+        padding : 2rem 11rem;
+    }
+
+    section{
+        width:71%;
+    }
+
+    #displaysection{
+        height: 80px;
+    }
+    
+}
+
+@media only screen and (min-width: 1024px){
+    body{
+        gap: 2rem;
+        padding : 2rem 14rem;
+    }
+
+    section{
+        width:65%;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    body{
+        gap: 2rem;
+        padding : 2rem 17rem;
+    }
+
+    section{
+        width:63%;
+    }
+
+    #displaysection{
+        height: 85px;
+    }
+    
+}
+
+@media only screen and (min-width: 1440px) {
+    body{
+        gap: 2rem;
+        padding : 2rem 20rem;
+    }
+
+    section{
+        width:60%;
+    }
+    
+}
+
+@media only screen and (min-width: 2560px) {
+    body{
+        gap: 2rem;
+        padding : 2rem 23rem;
+    }
+
+    section{
+        width:50%;
+    }
+
+    #displaysection{
+        height: 95px;
+    }
+    
+}
