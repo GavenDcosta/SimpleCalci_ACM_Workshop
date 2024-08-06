@@ -34,8 +34,6 @@ for (var i = 0; i < operatorButtons.length; i++) {
 
 function handleDelete() {
   displayExpression.innerHTML = displayExpression.innerHTML.trim().slice(0, -1);
-  if (displayExpression.innerHTML === '') {
-  }
 }
 
 function handleReset() {
